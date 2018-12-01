@@ -4,8 +4,10 @@
  *
  * @link https://jetpack.com/
  *
- * @package _s
+ * @package Sector
  */
+
+namespace Sector\JetPack;
 
 /**
  * Jetpack setup function.
@@ -14,11 +16,11 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function _s_jetpack_setup() {
+function jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'render'    => '_s_infinite_scroll_render',
+		'render'    => __NAMESPACE__ . '\infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
@@ -36,18 +38,19 @@ function _s_jetpack_setup() {
 			'comment'    => '.comments-link',
 		),
 		'featured-images' => array(
-			'archive'    => true,
-			'post'       => true,
-			'page'       => true,
+			'archive' => true,
+			'post'    => true,
+			'page'    => true,
 		),
 	) );
 }
-add_action( 'after_setup_theme', '_s_jetpack_setup' );
+
+add_action( 'after_setup_theme', __NAMESPACE__ . '\jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function _s_infinite_scroll_render() {
+function infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :
