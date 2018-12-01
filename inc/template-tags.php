@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package _s
+ * @package Sector
  */
 
 if ( ! function_exists( '_s_posted_on' ) ) :
