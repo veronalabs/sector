@@ -1,6 +1,7 @@
 # [Sector](https://veronalabs.com/products/)
 A WordPress Starter Theme
 
+![Sector](https://veronalabs.com/wp-content/uploads/2018/12/sector-logo.png "Sector")
 
 ## Features
 
