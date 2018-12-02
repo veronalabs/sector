@@ -32,7 +32,7 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\woocommerce_setup' );
  * @return void
  */
 function woocommerce_scripts() {
-	wp_enqueue_style( 'sector-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
+	wp_enqueue_style( 'sector-woocommerce-style', get_template_directory_uri() . '/assets/css/woocommerce.css' );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
