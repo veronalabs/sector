@@ -5,8 +5,22 @@ A WordPress Starter Theme
 
 ## Features
 
-* Support SASS for stylesheets.
-* Support PHP Namespace.
+* SASS for stylesheets.
+* PHP Namespace.
+* Clean up `wp_head()`.
+  * Remove unnecessary `<link>`'s.
+  * Remove inline CSS and JS from WP emoji support.
+  * Remove inline CSS used by Recent Comments widget.
+  * Remove inline CSS used by posts with galleries.
+  * Remove self-closing tag.
+  * Remove the WordPress version from RSS feeds.
+  * Clean up `language_attributes()` used in `<html>` tag.
+  * Clean up output of stylesheet `<link>` tags.
+  * Clean up output of `<script>` tags.
+  * Add and remove `body_class()` classes.
+  * Wrap embedded media as suggested by Readability.
+  * Remove unnecessary self-closing tags.
+  * Don't return the default description in the RSS feed if it hasn't been changed.
 * A just right amount of lean, well-commented, modern, HTML5 templates.
 * A helpful 404 template.
 * A custom header implementation in `inc/custom-header.php` just add the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.

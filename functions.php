@@ -119,7 +119,8 @@ add_action( 'widgets_init', __NAMESPACE__ . '\widgets_init' );
  * Enqueue scripts and styles.
  */
 function scripts() {
-	wp_enqueue_style( 'sector-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'sector-style', get_template_directory_uri() . '/assets/css/style.css' );
+	wp_enqueue_style( 'sector-woocommerce-style', get_template_directory_uri() . '/assets/css/woocommerce.css' );
 
 	wp_enqueue_script( 'sector-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 
@@ -131,6 +132,11 @@ function scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts' );
+
+/**
+ * Implement the Clean-up functions.
+ */
+require get_template_directory() . '/inc/clean-up.php';
 
 /**
  * Implement the Custom Header feature.
