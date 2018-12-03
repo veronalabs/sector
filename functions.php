@@ -134,6 +134,11 @@ function scripts() {
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts' );
 
 /**
+ * Implement the Clean-up functions.
+ */
+require get_template_directory() . '/inc/clean-up.php';
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
