@@ -1,8 +1,24 @@
 {
+  "name": "develop",
+  "version": "1.0.0",
+  "description": "A development environment.",
+  "main": "",
   "scripts": {
-    "scss": "sass assets\\sass\\style.scss assets\\css\\style.css | sass assets\\sass\\woocommerce.scss assets\\css\\woocommerce.css"
+    "test": "test"
   },
-  "dependencies": {
-    "node-sass": "^4.10.0"
+  "author": "Mohammadreza Molaei",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gridlex": "^2.7.1",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglyfly": "^1.4.2",
+    "node-sass": "^4.11.0",
+    "sass-mq": "^5.0.0"
   }
 }
