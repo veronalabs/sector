@@ -40,3 +40,25 @@ function pingback_header() {
 }
 
 add_action( 'wp_head', __NAMESPACE__ . '\pingback_header' );
+
+
+
+// ACF Blocks
+function register_blocks() {
+
+	// register a testimonial block.
+	acf_register_block(array(
+		'name'              => 'testimonial',
+		'title'             => __('Testimonial'),
+		'description'       => __('A custom testimonial block.'),
+		'render_template'   => 'template-parts/components/c-testimonial.php',
+		'category'          => 'formatting',
+		'icon'              => 'admin-comments',
+		'keywords'          => array( 'testimonial', 'quote' ),
+	));
+}
+// Warning: call_user_func_array() expects parameter 1 to be a valid callback, function 'register_acf_blocks' not found or invalid function name in C:\xampp\htdocs\develop\wp-includes\class-wp-hook.php on line 286
+// Check if function exists and hook into setup.
+if( function_exists('acf_register_block') ) {
+	add_action('acf/init', __NAMESPACE__ . '\register_blocks');
+}
