@@ -3,8 +3,7 @@
   "version": "1.1.0",
   "description": "A WordPress Starter Theme",
   "main": "",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "Mohammadreza Molaei",
   "license": "ISC",
   "devDependencies": {
