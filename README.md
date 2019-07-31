@@ -80,6 +80,14 @@ sector
 └── template-parts                  
 ```
 
+## Development
+To start develop your own theme with sector, Follow steps below:
+1. Open your command line
+2. Go to your project folder ``` cd path/to/your/project ```
+3. Run ``` npm install ```
+4. Edit your proxy setting in Browser-Sync task in ```gulpfile.js```
+5. Run ``` gulp ```
+
 
 ## Community
 
