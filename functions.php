@@ -173,6 +173,11 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 /**
+ * Load TGMPA
+ */
+require_once get_template_directory() . '/inc/tgmpa-config.php';
+
+/**
  * Load Merlin
  */
 require_once get_template_directory() . '/inc/merlin/vendor/autoload.php';
