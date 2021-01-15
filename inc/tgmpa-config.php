@@ -13,7 +13,6 @@
  * Plugin:
  * require_once dirname( __FILE__ ) . '/path/to/class-tgm-plugin-activation.php';
  */
-require_once get_template_directory() . '/inc/tgm/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'sector_register_required_plugins' );
 
