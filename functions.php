@@ -172,4 +172,11 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
 
+/**
+ * Load Merlin
+ */
+require_once get_template_directory() . '/inc/merlin/vendor/autoload.php';
+require_once get_template_directory() . '/inc/merlin/class-merlin.php';
+require_once get_template_directory() . '/inc/merlin-config.php';
+
 
