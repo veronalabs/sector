@@ -22,14 +22,15 @@ class Merlin_Redux_Importer {
 		}
 
 		foreach ( $import_data as $redux_item ) {
-			$redux_options_raw_data = file_get_contents( $redux_item['file_path'] );
+		    global $wp_filesystem;
+			$redux_options_raw_data = $wp_filesystem->get_contents( $redux_item['file_path'] );
 			$redux_options_data     = json_decode( $redux_options_raw_data, true );
 			$redux_framework        = ReduxFrameworkInstances::get_instance( $redux_item['option_name'] );
 
 			if ( isset( $redux_framework->args['opt_name'] ) ) {
 				$redux_framework->set_options( $redux_options_data );
 
-				Merlin_Logger::get_instance()->debug( __( 'The Redux Framework data was imported' , 'merlin-wp'), $redux_item );
+				Merlin_Logger::get_instance()->debug( __( 'The Redux Framework data was imported' , 'wp-meliora'), $redux_item );
 			}
 		}
 

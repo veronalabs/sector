@@ -7,7 +7,7 @@
   "author": "Mohammadreza Molaei",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.12",
+    "browser-sync": "^2.26.13",
     "deep-extend": "^0.6.0",
     "gridlex": "^2.7.1",
     "gulp": "^4.0.0",
