@@ -27,7 +27,7 @@ class Merlin_Customizer_Importer {
 			return false;
 		}
 
-		Merlin_Logger::get_instance()->info( __( 'The customizer import has finished successfully', 'merlin-wp' ) );
+		Merlin_Logger::get_instance()->info( __( 'The customizer import has finished successfully', 'wp-meliora' ) );
 		return true;
 	}
 
@@ -54,20 +54,21 @@ class Merlin_Customizer_Importer {
 			return new \WP_Error(
 				'missing_cutomizer_import_file',
 				sprintf(
-					esc_html__( 'Error: The customizer import file is missing! File path: %s', 'merlin-wp' ),
+					esc_html__( 'Error: The customizer import file is missing! File path: %s', 'wp-meliora' ),
 					$import_file_path
 				)
 			);
 		}
 
 		// Get the upload data.
-		$raw = file_get_contents( $import_file_path );
+        global $wp_filesystem;
+		$raw = $wp_filesystem->get_contents( $import_file_path );
 
 		// Make sure we got the data.
 		if ( empty( $raw ) ) {
 			return new \WP_Error(
 				'customizer_import_data_missing_content',
-				esc_html__( 'Error: The customizer import file does not have any content in it. Please make sure to use the correct customizer import file.', 'merlin-wp' )
+				esc_html__( 'Error: The customizer import file does not have any content in it. Please make sure to use the correct customizer import file.', 'wp-meliora' )
 			);
 		}
 
@@ -77,13 +78,13 @@ class Merlin_Customizer_Importer {
 		if ( ! is_array( $data ) && ( ! isset( $data['template'] ) || ! isset( $data['mods'] ) ) ) {
 			return new \WP_Error(
 				'customizer_import_data_error',
-				esc_html__( 'Error: The customizer import file is not in a correct format. Please make sure to use the correct customizer import file.', 'merlin-wp' )
+				esc_html__( 'Error: The customizer import file is not in a correct format. Please make sure to use the correct customizer import file.', 'wp-meliora' )
 			);
 		}
 		if ( $data['template'] !== $template ) {
 			return new \WP_Error(
 				'customizer_import_wrong_theme',
-				esc_html__( 'Error: The customizer import file is not suitable for current theme. You can only import customizer settings for the same theme or a child theme.', 'merlin-wp' )
+				esc_html__( 'Error: The customizer import file is not suitable for current theme. You can only import customizer settings for the same theme or a child theme.', 'wp-meliora' )
 			);
 		}
 
